@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WIMMS Autismo · Omega-3 nano-emulsionado para niños | Immunotec</title>
+<meta name="description" content="Wimms Autismo: Omega-3 DHA/EPA nano-emulsionado, vitaminas y minerales en gomitas para apoyar la atención, la memoria y el descanso de niños con autismo.">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#12062b;--navy2:#1d0b3d;
+  --blue:#7b2cbf;--blue2:#5a189a;
+  --cyan:#19c3d4;--teal:#5eead4;
+  --gold:#e8a317;--gold2:#ffc93c;--gold3:#ffe29a;
+  --white:#ffffff;--mist:#d9c2f0;--verde:#00c47a;
+  --wimms1:#e85d04;--wimms2:#ff9f1c;--wimms3:#ff8a00;
+  --wimms4:#19c3d4;--wimms5:#10b981;
+  --kids-red:#d6247a;--kids-blue:#7b2cbf;--kids-yellow:#ffc93c;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;position:relative;}
+
+/* ── DNA CANVAS ── */
+#dna-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.22;}
+
+/* ── NAVBAR ── */
+.navbar{
+  position:fixed;top:0;left:0;right:0;z-index:9000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 32px;
+  background:rgba(18,6,43,0.88);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(232,93,4,0.25);
+}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo img{height:42px;filter:brightness(1.4) drop-shadow(0 0 10px rgba(232,93,4,0.4));}
+.nav-store{font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--wimms2);opacity:0.7;font-weight:500;display:none;}
+@media(min-width:600px){.nav-store{display:block;}}
+.nav-wa{
+  display:inline-flex;align-items:center;gap:7px;
+  background:linear-gradient(135deg,#25d366,#1aad52);
+  color:#fff;font-size:0.82rem;font-weight:700;
+  padding:9px 20px;border-radius:40px;text-decoration:none;
+  box-shadow:0 4px 16px rgba(37,211,102,0.3);transition:transform .2s;white-space:nowrap;
+}
+.nav-wa:hover{transform:translateY(-2px);}
+.nav-wa svg{width:16px;height:16px;fill:#fff;flex-shrink:0;}
+.nav-wa-txt{display:none;}
+@media(min-width:520px){.nav-wa-txt{display:inline;}}
+@media(max-width:480px){.navbar{padding:10px 14px;}.nav-logo img{height:28px;}}
+
+/* ── FLOAT WA ── */
+.float-wa{
+  position:fixed;bottom:24px;right:24px;z-index:8999;
+  width:58px;height:58px;border-radius:50%;
+  background:linear-gradient(135deg,#25d366,#1aad52);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 28px rgba(37,211,102,0.5);text-decoration:none;
+  animation:wa-pulse 2.5s ease-in-out infinite;transition:transform .2s;
+}
+.float-wa:hover{transform:scale(1.1);}
+.float-wa svg{width:28px;height:28px;fill:#fff;}
+@keyframes wa-pulse{0%,100%{box-shadow:0 6px 28px rgba(37,211,102,0.5);}50%{box-shadow:0 8px 40px rgba(37,211,102,0.8);}}
+
+/* ── BANNER WIMMS ── */
+.banner-wimms{width:100%;display:block;line-height:0;position:relative;z-index:1;padding-top:68px;}
+.banner-wimms img{width:100%;height:auto;display:block;border-bottom:3px solid rgba(232,93,4,0.4);}
+@media(max-width:480px){.banner-wimms{padding-top:52px;}}
+
+/* ── HERO ── */
+.hero{
+  position:relative;min-height:92vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:80px 20px 80px;z-index:1;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(232,93,4,0.2) 0%,transparent 70%);
+  pointer-events:none;
+}
+/* Floating emoji kids decorations */
+.hero-float{position:absolute;font-size:2.2rem;animation:float-random 6s ease-in-out infinite;pointer-events:none;z-index:0;opacity:0.55;}
+.hero-float:nth-child(1){top:12%;left:8%;animation-delay:0s;}
+.hero-float:nth-child(2){top:18%;right:9%;animation-delay:1.2s;}
+.hero-float:nth-child(3){top:65%;left:5%;animation-delay:2.4s;}
+.hero-float:nth-child(4){top:60%;right:6%;animation-delay:0.8s;}
+.hero-float:nth-child(5){top:38%;left:3%;animation-delay:3s;}
+.hero-float:nth-child(6){top:40%;right:3%;animation-delay:1.8s;}
+@keyframes float-random{0%,100%{transform:translateY(0) rotate(-5deg);}50%{transform:translateY(-18px) rotate(5deg);}}
+
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:linear-gradient(135deg,var(--wimms1),var(--wimms2));
+  padding:8px 22px;border-radius:50px;
+  font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;
+  color:#fff;font-weight:800;margin-bottom:28px;
+  animation:fade-in-down 1s ease both,badge-pulse-purple 2.5s ease-in-out 1s infinite;
+}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:#fff;opacity:0.8;animation:dot-blink 1.5s ease-in-out infinite;}
+@keyframes badge-pulse-purple{0%,100%{box-shadow:0 0 0 0 rgba(232,93,4,0.6);}50%{box-shadow:0 0 0 16px rgba(232,93,4,0);}}
+@keyframes dot-blink{0%,100%{opacity:0.8;}50%{opacity:0.2;}}
+@keyframes fade-in-down{from{opacity:0;transform:translateY(-16px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fade-in-up{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+.hero h1{
+  font-family:'Nunito',sans-serif;
+  font-size:clamp(2.2rem,5.5vw,4.8rem);font-weight:900;line-height:1.1;
+  max-width:860px;margin-bottom:22px;
+  background:linear-gradient(135deg,#ff8a00 0%,#ffc93c 30%,#ff9f1c 60%,#19c3d4 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:fade-in-up 1s ease 0.2s both;position:relative;z-index:1;
+}
+.hero-sub{
+  font-size:clamp(0.95rem,2.2vw,1.15rem);color:var(--mist);font-weight:300;
+  max-width:640px;line-height:1.75;margin-bottom:40px;
+  animation:fade-in-up 1s ease 0.4s both;position:relative;z-index:1;
+}
+.hero-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  background:linear-gradient(135deg,#25d366,#1aad52);
+  color:#fff;font-size:1.05rem;font-weight:700;
+  padding:17px 38px;border-radius:60px;text-decoration:none;
+  box-shadow:0 8px 32px rgba(37,211,102,0.4);
+  transition:transform .2s,box-shadow .2s;animation:fade-in-up 1s ease 0.6s both;
+  position:relative;z-index:1;
+}
+.hero-cta:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(37,211,102,0.55);}
+.hero-cta svg{width:22px;height:22px;fill:#fff;}
+.scroll-hint{
+  position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
+  color:rgba(217,194,240,0.35);font-size:0.7rem;letter-spacing:3px;
+  display:flex;flex-direction:column;align-items:center;gap:6px;z-index:1;
+}
+.scroll-hint::after{
+  content:'';width:1px;height:28px;
+  background:linear-gradient(rgba(232,93,4,0.4),transparent);
+  animation:scroll-ln 1.8s ease-in-out infinite;
+}
+@keyframes scroll-ln{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform:scaleY(1);transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
+
+/* ── DISCOUNT PROMO BANNER ── */
+.promo-strip{
+  background:linear-gradient(135deg,var(--wimms1),var(--wimms3));
+  padding:20px;text-align:center;position:relative;z-index:1;
+  overflow:hidden;
+}
+.promo-strip::before{
+  content:'🎉 ';font-size:1.5rem;
+}
+.promo-strip-text{font-family:'Nunito',sans-serif;font-size:clamp(1rem,2.5vw,1.4rem);font-weight:900;color:#fff;letter-spacing:1px;}
+.promo-strip-text span{color:#ffc93c;font-size:1.2em;}
+.promo-strip::after{content:' 🎉';font-size:1.5rem;}
+
+/* ── SECTION COMMONS ── */
+section{position:relative;z-index:1;}
+.container{max-width:1100px;margin:0 auto;padding:0 20px;}
+.section-label{display:block;font-size:0.7rem;letter-spacing:3.5px;text-transform:uppercase;color:var(--wimms2);font-weight:600;margin-bottom:10px;}
+.section-title{font-family:'Nunito',sans-serif;font-size:clamp(1.9rem,4vw,3rem);font-weight:900;line-height:1.15;margin-bottom:14px;}
+.section-sub{color:var(--mist);font-size:1rem;line-height:1.75;max-width:600px;}
+.purple-line{width:52px;height:3px;margin:14px 0 32px;background:linear-gradient(90deg,var(--wimms2),transparent);border-radius:2px;}
+
+/* ── WIMMS PRODUCT HERO ── */
+.wimms-hero{padding:90px 20px;background:linear-gradient(180deg,var(--navy) 0%,rgba(232,93,4,0.08) 50%,var(--navy2) 100%);}
+.wimms-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:48px;}
+@media(max-width:700px){.wimms-grid{grid-template-columns:1fr;gap:32px;}}
+
+.wimms-product-card{
+  background:linear-gradient(160deg,rgba(232,93,4,0.12),var(--navy2));
+  border:2px solid rgba(232,93,4,0.4);border-radius:28px;padding:36px;
+  position:relative;overflow:hidden;text-align:center;
+  box-shadow:0 4px 60px rgba(232,93,4,0.2);
+}
+.wimms-product-card::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 0%,rgba(255,159,28,0.1),transparent 60%);
+}
+.wimms-img-wrap{
+  width:240px;height:240px;margin:0 auto 24px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;overflow:hidden;
+  background:radial-gradient(circle,rgba(232,93,4,0.15),transparent);
+  border:3px solid rgba(255,159,28,0.3);
+  animation:wimms-glow 3s ease-in-out infinite;
+}
+@keyframes wimms-glow{0%,100%{box-shadow:0 0 20px rgba(232,93,4,0.3);}50%{box-shadow:0 0 50px rgba(255,159,28,0.7);}}
+.wimms-img-wrap img{width:100%;height:100%;object-fit:contain;padding:14px;}
+.wimms-badge-promo{
+  display:inline-flex;align-items:center;gap:8px;
+  background:linear-gradient(135deg,#d6247a,#ff8a00);
+  color:#fff;font-family:'Nunito',sans-serif;font-weight:900;font-size:1.3rem;
+  padding:10px 28px;border-radius:50px;margin-bottom:16px;
+  box-shadow:0 4px 20px rgba(214,36,122,0.4);
+  animation:badge-pulse-purple 2s ease-in-out infinite;
+}
+
+.wimms-info h3{font-family:'Nunito',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;margin-bottom:16px;
+  background:linear-gradient(135deg,var(--wimms2),var(--wimms3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.wimms-info p{color:var(--mist);font-size:0.97rem;line-height:1.8;margin-bottom:20px;}
+.wimms-features{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:28px;}
+.wimms-features li{display:flex;align-items:flex-start;gap:10px;font-size:0.9rem;color:#d9c2f0;line-height:1.5;}
+.wimms-features li .feat-icon{font-size:1.2rem;flex-shrink:0;}
+.cert-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+.cert-chip{background:rgba(232,93,4,0.15);border:1px solid rgba(232,93,4,0.4);border-radius:6px;padding:4px 12px;font-size:0.7rem;font-weight:700;letter-spacing:1px;color:var(--wimms2);}
+
+/* ── PAIN SECTION ── */
+.pain-section{padding:90px 20px;background:linear-gradient(180deg,var(--navy) 0%,var(--navy2) 100%);}
+.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:48px;}
+@media(max-width:700px){.pain-grid{grid-template-columns:1fr;gap:28px;}}
+.pain-visual{
+  background:rgba(232,93,4,0.05);border:1px solid rgba(232,93,4,0.2);
+  border-radius:22px;padding:28px 20px;position:relative;overflow:hidden;
+}
+.pain-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(255,159,28,0.07),transparent 60%);}
+.pain-header{text-align:center;margin-bottom:20px;font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,159,28,0.6);font-family:'Nunito',sans-serif;font-weight:700;}
+.pain-dots{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.pain-dot{
+  display:flex;align-items:center;gap:8px;
+  background:rgba(232,93,4,0.07);border:1px solid rgba(232,93,4,0.2);
+  border-radius:8px;padding:9px 11px;
+  font-size:0.8rem;color:#d9c2f0;font-weight:500;
+  cursor:pointer;user-select:none;
+  transition:background .25s,border-color .25s,color .25s,box-shadow .25s;
+}
+.pain-dot:hover{background:rgba(255,138,0,0.12);border-color:rgba(255,138,0,0.5);color:#ffc93c;}
+.pain-dot.active{background:rgba(255,138,0,0.2)!important;border-color:var(--wimms3)!important;color:#ffc93c!important;box-shadow:0 0 12px rgba(255,138,0,0.3)!important;}
+.pain-dot.active .dot-node{background:var(--wimms3)!important;box-shadow:0 0 8px var(--wimms3)!important;}
+.pain-dot .dot-node{width:7px;height:7px;border-radius:50%;flex-shrink:0;background:var(--wimms1);box-shadow:0 0 6px var(--wimms1);transition:background .25s,box-shadow .25s;}
+.pain-text h3{font-family:'Nunito',sans-serif;font-size:1.7rem;font-weight:900;margin-bottom:14px;color:var(--white);}
+.pain-text p{color:var(--mist);line-height:1.8;margin-bottom:16px;font-size:0.95rem;}
+.pain-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.pain-list li{display:flex;align-items:flex-start;gap:10px;font-size:0.92rem;color:#d9c2f0;line-height:1.5;}
+.pain-list li::before{content:'✓';color:var(--wimms5);font-weight:700;flex-shrink:0;margin-top:1px;}
+
+/* ── GENERATIONAL TABLE ── */
+.gen-section{padding:90px 20px;background:radial-gradient(ellipse at 50% 50%,rgba(232,93,4,0.1) 0%,var(--navy) 70%);}
+.gen-table-wrap{overflow-x:auto;margin-top:40px;border-radius:20px;border:1px solid rgba(232,93,4,0.25);box-shadow:0 0 60px rgba(232,93,4,0.1);}
+.gen-table{width:100%;border-collapse:collapse;background:rgba(29,11,61,0.97);min-width:700px;}
+.gen-table thead tr{background:linear-gradient(135deg,var(--wimms1),var(--wimms2));}
+.gen-table th{padding:16px 14px;text-align:left;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.82rem;letter-spacing:1.5px;text-transform:uppercase;color:#fff;}
+.gen-table td{padding:16px 14px;border-bottom:1px solid rgba(232,93,4,0.12);color:#d9c2f0;font-size:0.88rem;line-height:1.6;vertical-align:top;}
+.gen-table tbody tr:last-child td{border-bottom:none;}
+.gen-table tbody tr:nth-child(even){background:rgba(232,93,4,0.04);}
+.gen-table tbody tr:hover{background:rgba(232,93,4,0.08);transition:background .2s;}
+.gen-badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:700;font-family:'Nunito',sans-serif;}
+.gen-b1{background:rgba(25,195,212,0.15);color:#19c3d4;border:1px solid rgba(25,195,212,0.3);}
+.gen-b2{background:rgba(255,138,0,0.15);color:#ff8a00;border:1px solid rgba(255,138,0,0.3);}
+.gen-b3{background:rgba(16,185,129,0.15);color:#10b981;border:1px solid rgba(16,185,129,0.3);}
+.gen-b4{background:rgba(255,159,28,0.15);color:#ff9f1c;border:1px solid rgba(255,159,28,0.3);}
+
+.gen-reflection{
+  margin-top:40px;background:linear-gradient(160deg,rgba(232,93,4,0.12),rgba(29,11,61,0.95));
+  border:1px solid rgba(232,93,4,0.3);border-radius:22px;padding:36px;position:relative;overflow:hidden;
+}
+.gen-reflection::before{content:'💡';position:absolute;top:-10px;right:20px;font-size:5rem;opacity:0.06;}
+.gen-reflection h3{font-family:'Nunito',sans-serif;font-size:1.5rem;font-weight:900;margin-bottom:16px;color:var(--wimms2);}
+.gen-reflection p{color:var(--mist);line-height:1.8;font-size:0.95rem;margin-bottom:12px;}
+.gen-highlight{color:#ffc93c;font-weight:700;}
+
+/* ── FIVE PILLARS ── */
+.pillars-section{padding:90px 20px;background:linear-gradient(180deg,var(--navy2) 0%,var(--navy) 100%);}
+.pillars-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:48px;}
+@media(max-width:900px){.pillars-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:600px){.pillars-grid{grid-template-columns:1fr 1fr;}}
+.pillar-card{
+  background:linear-gradient(160deg,rgba(29,11,61,0.97),rgba(18,6,43,0.97));
+  border:1px solid rgba(232,93,4,0.25);border-radius:18px;
+  padding:24px 16px;text-align:center;
+  transition:transform .3s,box-shadow .3s,border-color .3s;
+  position:relative;overflow:hidden;
+}
+.pillar-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(232,93,4,0.25);border-color:rgba(255,159,28,0.5);}
+.pillar-icon{font-size:2.4rem;margin-bottom:12px;display:block;}
+.pillar-name{font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem;color:#fff;margin-bottom:8px;}
+.pillar-desc{font-size:0.78rem;color:#b79ad6;line-height:1.5;}
+.pillar-card:nth-child(5){grid-column:span 1;}
+@media(max-width:600px){.pillar-card:nth-child(5){grid-column:span 2;}}
+
+/* ── SCIENCE ── */
+.science-section{padding:80px 20px;background:radial-gradient(ellipse at 50% 50%,rgba(232,93,4,0.1) 0%,var(--navy) 70%);}
+.science-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;}
+@media(max-width:680px){.science-inner{grid-template-columns:1fr;gap:32px;}}
+.logo-orbit{position:relative;display:flex;align-items:center;justify-content:center;min-height:280px;}
+.orbit-ring{position:absolute;border-radius:50%;border:1px solid rgba(255,159,28,0.15);animation:orbit-spin 20s linear infinite;}
+.orbit-ring:nth-child(1){width:240px;height:240px;}
+.orbit-ring:nth-child(2){width:300px;height:300px;animation-duration:28s;animation-direction:reverse;}
+.orbit-ring:nth-child(3){width:360px;height:360px;animation-duration:36s;}
+@keyframes orbit-spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+.orbit-dot{position:absolute;width:7px;height:7px;border-radius:50%;background:var(--wimms2);box-shadow:0 0 10px var(--wimms2);top:0;left:50%;transform:translateX(-50%);}
+.orbit-glow{position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(232,93,4,0.2) 0%,transparent 70%);animation:glow-pulse 3s ease-in-out infinite;}
+@keyframes glow-pulse{0%,100%{transform:scale(1);opacity:0.6;}50%{transform:scale(1.2);opacity:1;}}
+.orbit-logo{width:180px;position:relative;z-index:2;filter:brightness(1.5) drop-shadow(0 0 24px rgba(255,159,28,0.5));animation:logo-float 4s ease-in-out infinite;}
+@keyframes logo-float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+.science-text h2{font-family:'Nunito',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;line-height:1.2;margin-bottom:14px;background:linear-gradient(135deg,#fff 40%,var(--wimms2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.science-text p{color:var(--mist);font-size:0.94rem;line-height:1.8;margin-bottom:16px;}
+.avales{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px;}
+.avales li{display:flex;align-items:center;gap:10px;font-size:0.88rem;color:#d9c2f0;}
+.aval-chip{background:rgba(232,93,4,0.12);border:1px solid rgba(255,159,28,0.3);border-radius:6px;padding:3px 10px;font-size:0.7rem;font-weight:700;letter-spacing:1px;color:var(--wimms2);flex-shrink:0;}
+.tienda-link{display:inline-flex;align-items:center;gap:7px;color:rgba(217,194,240,0.5);font-size:0.8rem;letter-spacing:1px;text-decoration:none;transition:color .2s;}
+.tienda-link:hover{color:var(--wimms2);}
+.tienda-link svg{width:14px;height:14px;fill:currentColor;}
+
+/* ── TESTIMONIALS ── */
+.testimonials-section{padding:90px 20px;background:linear-gradient(180deg,var(--navy2) 0%,var(--navy) 100%);}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:50px;}
+.testi-card{background:linear-gradient(160deg,#1d0b3d,#12062b);border:1px solid rgba(232,93,4,0.2);border-radius:18px;padding:26px 22px;transition:transform .25s,border-color .25s;position:relative;overflow:hidden;}
+.testi-card::before{content:'"';position:absolute;top:-8px;right:16px;font-size:7rem;color:rgba(232,93,4,0.07);font-family:'Nunito',sans-serif;line-height:1;pointer-events:none;}
+.testi-card:hover{transform:translateY(-4px);border-color:rgba(255,159,28,0.45);}
+.stars{color:var(--wimms3);font-size:0.8rem;letter-spacing:2px;margin-bottom:10px;}
+.testi-product{display:inline-block;font-size:0.67rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:9px;letter-spacing:1px;}
+.tp-wimms{background:rgba(232,93,4,0.18);color:var(--wimms2);border:1px solid rgba(232,93,4,0.3);}
+.testi-text{font-size:0.9rem;line-height:1.7;color:#e6d3f5;margin-bottom:16px;font-style:italic;}
+.testi-author{display:flex;align-items:center;gap:10px;}
+.testi-avatar{width:40px;height:40px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--wimms1),var(--wimms2));display:flex;align-items:center;justify-content:center;font-family:'Nunito',sans-serif;font-size:1rem;font-weight:700;}
+.testi-name{font-weight:600;font-size:0.88rem;color:#f6ecff;}
+.testi-loc{font-size:0.75rem;color:#c2410c;margin-top:2px;}
+
+/* ── FORM ── */
+.form-section{padding:90px 20px;background:radial-gradient(ellipse at 50% 30%,rgba(232,93,4,0.12) 0%,var(--navy2) 70%);}
+.form-box{max-width:720px;margin:48px auto 0;background:linear-gradient(160deg,rgba(29,11,61,0.95),rgba(18,6,43,0.95));border:1px solid rgba(255,159,28,0.25);border-radius:28px;padding:48px 44px;box-shadow:0 0 80px rgba(232,93,4,0.15),inset 0 1px 0 rgba(255,255,255,0.04);position:relative;overflow:hidden;}
+.form-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(255,159,28,0.06),transparent 60%);pointer-events:none;}
+.form-box h3{font-family:'Nunito',sans-serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:900;margin-bottom:8px;text-align:center;background:linear-gradient(135deg,#fff 40%,var(--wimms2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.form-box p.form-sub{text-align:center;color:var(--mist);font-size:0.9rem;margin-bottom:32px;line-height:1.6;}
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:20px;}
+.form-group label{font-size:0.78rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--wimms2);font-weight:600;}
+.form-group input,.form-group select{background:rgba(232,93,4,0.07);border:1px solid rgba(232,93,4,0.25);border-radius:12px;padding:14px 18px;font-size:0.95rem;color:var(--white);font-family:'Inter',sans-serif;outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;appearance:none;width:100%;}
+.form-group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23a855f7' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:44px;cursor:pointer;}
+.form-group select option{background:#1d0b3d;color:#fff;}
+.form-group input:focus,.form-group select:focus{border-color:var(--wimms2);box-shadow:0 0 0 3px rgba(255,159,28,0.15);}
+.form-group input::placeholder{color:rgba(217,194,240,0.4);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:540px){.form-row{grid-template-columns:1fr;}}
+.form-submit{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,var(--wimms1),var(--wimms2));color:#fff;font-size:1rem;font-weight:700;padding:18px 28px;border-radius:60px;border:none;cursor:pointer;box-shadow:0 8px 32px rgba(232,93,4,0.4);transition:transform .2s,box-shadow .2s;margin-top:8px;font-family:'Nunito',sans-serif;}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(255,159,28,0.55);}
+.form-submit svg{width:20px;height:20px;fill:#fff;}
+.form-submit:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
+.form-note{text-align:center;margin-top:16px;color:rgba(217,194,240,0.4);font-size:0.78rem;line-height:1.5;}
+.form-success{display:none;text-align:center;padding:40px 20px;}
+.form-success .check-icon{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--wimms1),var(--wimms2));display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 0 40px rgba(232,93,4,0.5);animation:pop-in .5s ease both;}
+@keyframes pop-in{from{transform:scale(0.5);opacity:0;}to{transform:scale(1);opacity:1;}}
+.form-success .check-icon svg{width:36px;height:36px;fill:#fff;}
+.form-success h4{font-family:'Nunito',sans-serif;font-size:1.8rem;font-weight:900;margin-bottom:10px;}
+.form-success p{color:var(--mist);font-size:0.95rem;line-height:1.7;margin-bottom:24px;}
+.form-success .wa-confirm{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#25d366,#1aad52);color:#fff;font-size:0.95rem;font-weight:700;padding:14px 28px;border-radius:50px;text-decoration:none;box-shadow:0 6px 24px rgba(37,211,102,0.4);}
+
+/* ── CTA ── */
+.cta-section{padding:90px 20px;background:radial-gradient(ellipse at center,rgba(232,93,4,0.14) 0%,var(--navy) 70%);text-align:center;border-top:1px solid rgba(232,93,4,0.12);}
+.cta-cards{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin:44px 0;}
+.cta-reason{background:rgba(29,11,61,0.9);border:1px solid rgba(232,93,4,0.2);border-radius:16px;padding:20px 22px;max-width:210px;text-align:center;font-size:0.87rem;color:var(--mist);line-height:1.5;}
+.cta-reason .r-icon{font-size:1.8rem;display:block;margin-bottom:9px;}
+.cta-reason strong{color:#fff;display:block;margin-bottom:4px;font-size:0.9rem;}
+.cta-wa-main{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,#25d366,#1aad52);color:#fff;font-size:1.15rem;font-weight:700;padding:20px 48px;border-radius:70px;text-decoration:none;box-shadow:0 8px 40px rgba(37,211,102,0.45);transition:transform .2s,box-shadow .2s;margin-bottom:20px;font-family:'Nunito',sans-serif;}
+.cta-wa-main:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 16px 52px rgba(37,211,102,0.6);}
+.cta-wa-main svg{width:26px;height:26px;fill:#fff;}
+.cta-sub{color:rgba(217,194,240,0.5);font-size:0.85rem;}
+.cta-sub strong{color:rgba(217,194,240,0.7);}
+
+/* ── PRESENTER — ALEXA ── */
+.presenter-section{padding:90px 20px;background:linear-gradient(180deg,var(--navy2) 0%,var(--navy) 100%);border-top:1px solid rgba(232,93,4,0.12);}
+.presenter-magnetic{max-width:920px;margin:0 auto;background:linear-gradient(135deg,rgba(29,11,61,0.97),rgba(18,6,43,0.97));border:1px solid rgba(255,159,28,0.3);border-radius:28px;overflow:hidden;display:grid;grid-template-columns:360px 1fr;box-shadow:0 0 80px rgba(232,93,4,0.15),0 0 0 1px rgba(255,159,28,0.08);position:relative;}
+.presenter-magnetic::after{content:'';position:absolute;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent 0%,rgba(255,159,28,0) 10%,rgba(255,159,28,0.9) 30%,#e0b0ff 50%,rgba(255,159,28,0.9) 70%,rgba(255,159,28,0) 90%,transparent 100%);box-shadow:0 0 18px 5px rgba(255,159,28,0.6),0 0 40px 10px rgba(255,159,28,0.2);z-index:10;top:0;pointer-events:none;animation:laser-scan 3.5s ease-in-out infinite;}
+@keyframes laser-scan{0%{top:0%;opacity:0;}5%{opacity:1;}48%{top:100%;opacity:1;}52%{top:100%;opacity:0;}53%{top:0%;opacity:0;}100%{top:0%;opacity:0;}}
+.presenter-img-side{position:relative;overflow:hidden;height:480px;flex-shrink:0;}
+.presenter-img-side img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:brightness(1.1) contrast(1.05) saturate(1.08);transition:transform .5s ease;}
+.presenter-magnetic:hover .presenter-img-side img{transform:scale(1.04);}
+.presenter-info{padding:40px 36px;display:flex;flex-direction:column;justify-content:center;gap:13px;position:relative;z-index:2;}
+.presenter-badge2{display:inline-flex;align-items:center;gap:7px;background:rgba(232,93,4,0.15);border:1px solid rgba(255,159,28,0.35);border-radius:30px;padding:5px 15px;font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--wimms2);width:fit-content;font-family:'Nunito',sans-serif;}
+.presenter-name2{font-family:'Nunito',sans-serif;font-size:clamp(1.9rem,2.8vw,2.4rem);font-weight:900;line-height:1.1;background:linear-gradient(135deg,#fff 35%,var(--wimms2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.presenter-title2{color:rgba(217,194,240,0.5);font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;font-weight:500;}
+.presenter-div{width:44px;height:2px;background:linear-gradient(90deg,var(--wimms2),transparent);}
+.presenter-desc2{color:var(--mist);font-size:0.88rem;line-height:1.75;}
+.presenter-stats{display:flex;gap:20px;flex-wrap:wrap;}
+.p-stat strong{font-family:'Nunito',sans-serif;font-size:1.5rem;color:var(--wimms2);display:block;}
+.p-stat span{font-size:0.7rem;color:#5040a0;text-transform:uppercase;letter-spacing:1px;}
+.presenter-flags2{font-size:1.5rem;letter-spacing:8px;display:flex;align-items:center;gap:6px;}
+.presenter-contact{font-size:0.78rem;color:rgba(217,194,240,0.5);line-height:1.9;}
+.presenter-wa2{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#25d366,#1aad52);color:#fff;font-size:0.95rem;font-weight:700;padding:13px 24px;border-radius:50px;text-decoration:none;box-shadow:0 5px 22px rgba(37,211,102,0.35);transition:transform .2s,box-shadow .2s;width:fit-content;font-family:'Nunito',sans-serif;}
+.presenter-wa2:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,0.5);}
+.presenter-wa2 svg{width:20px;height:20px;fill:#fff;flex-shrink:0;}
+.presenter-store{display:inline-flex;align-items:center;gap:7px;color:rgba(217,194,240,0.4);font-size:0.78rem;font-weight:600;letter-spacing:1px;text-decoration:none;transition:color .2s;}
+.presenter-store:hover{color:var(--wimms2);}
+.presenter-store svg{width:13px;height:13px;fill:currentColor;}
+@media(max-width:700px){.presenter-magnetic{grid-template-columns:1fr;}.presenter-img-side{height:300px;}.presenter-info{padding:26px 20px 32px;}.presenter-name2{font-size:2rem;}.presenter-wa2,.presenter-store{width:100%;justify-content:center;}}
+
+/* ── FOOTER ── */
+footer{background:#010a16;text-align:center;padding:28px 20px;border-top:1px solid rgba(232,93,4,0.1);color:rgba(217,194,240,0.25);font-size:0.75rem;line-height:1.6;}
+footer span{color:var(--wimms2);}
+
+/* ── GLOBAL RESPONSIVE ── */
+@media(max-width:768px){
+  section{padding:60px 16px!important;}
+  .hero{padding:90px 16px 70px!important;}
+  .testimonials-grid{grid-template-columns:1fr;}
+  .cta-cards{gap:10px;}
+  .cta-reason{max-width:46%;min-width:130px;padding:14px 12px;font-size:0.8rem;}
+  .cta-wa-main{font-size:1rem;padding:17px 28px;}
+  .form-box{padding:30px 18px;}
+  .science-inner{grid-template-columns:1fr;}
+  .logo-orbit{min-height:220px;}
+  .wimms-grid{grid-template-columns:1fr;}
+  .pillars-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:420px){
+  .cta-reason{max-width:100%;}
+  .cta-wa-main{width:100%;justify-content:center;}
+  .form-row{grid-template-columns:1fr;}
+}
+.fade-up{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+@keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+
+/* ── CONFETTI STAR ACCENTS ── */
+.star-accent{display:inline-block;animation:star-spin 4s linear infinite;}
+@keyframes star-spin{0%{transform:rotate(0deg) scale(1);}50%{transform:rotate(180deg) scale(1.2);}100%{transform:rotate(360deg) scale(1);}}
+
+/* ═══ EDICIÓN WIMMS AUTISMO · overrides ═══ */
+body{background:radial-gradient(ellipse 120% 40% at 50% 0%,#3a1170 0%,transparent 70%),linear-gradient(180deg,#12062b 0%,#241046 45%,#12062b 100%);background-attachment:fixed;}
+.navbar{border-bottom:2px solid transparent;border-image:linear-gradient(90deg,#ff8a00,#d6247a,#7b2cbf,#19c3d4,#ffc93c) 1;}
+.hero::before{background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(255,138,0,.22) 0%,rgba(123,44,191,.18) 45%,transparent 72%);}
+.hero h1{background:linear-gradient(135deg,#ffc93c 0%,#ff8a00 35%,#ff4fa0 65%,#c58bff 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-badge{background:linear-gradient(135deg,#d6247a,#ff8a00 55%,#ffc93c);color:#2a0f4d;}
+.hero-badge-dot{background:#2a0f4d;}
+.banner-top{position:relative;z-index:1;display:block;width:100%;padding-top:68px;line-height:0;background:#12062b;}
+.banner-top img{width:100%;height:auto;display:block;border-bottom:3px solid #ff8a00;}
+@media(max-width:480px){.banner-top{padding-top:52px;}}
+.glass{background:rgba(255,255,255,.06);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:26px 22px;box-shadow:0 8px 40px rgba(0,0,0,.25);}
+.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;}
+@media(max-width:900px){.benefit-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.benefit-grid{grid-template-columns:1fr;}}
+.benefit-grid .glass .b-ico{font-size:2rem;display:block;margin-bottom:10px;}
+.benefit-grid .glass h3{font-family:'Nunito',sans-serif;font-size:1.05rem;font-weight:800;margin-bottom:6px;}
+.benefit-grid .glass p{font-size:.86rem;color:var(--mist);line-height:1.65;}
+.video-section{padding:90px 20px;background:linear-gradient(180deg,var(--navy) 0%,rgba(123,44,191,.15) 50%,var(--navy2) 100%);text-align:center;}
+.video-wrap{max-width:860px;margin:40px auto 0;border-radius:24px;overflow:hidden;border:2px solid rgba(255,159,28,.4);box-shadow:0 0 60px rgba(232,93,4,.25);aspect-ratio:16/9;background:#000;}
+.video-wrap iframe{width:100%;height:100%;border:0;display:block;}
+.testi-note{text-align:center;margin-top:26px;font-size:.75rem;color:rgba(217,194,240,.45);}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;text-align:left;}
+@media(max-width:700px){.steps{grid-template-columns:1fr;}}
+.step-n{font-family:'Nunito',sans-serif;font-weight:900;font-size:2rem;color:var(--wimms2);display:block;}
+.mid-cta{text-align:center;margin-top:36px;}
+</style>
+</head>
+<body>
+<canvas id="dna-canvas"></canvas>
+
+<a href="https://wa.me/522218620111?text=Hola%20vi%20su%20p%C3%A1gina%20y%20quiero%20informaci%C3%B3n%20de%20Wimms%20Autismo" class="float-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<nav class="navbar">
+  <a class="nav-logo" href="https://www.immunotec.com/es-MX" target="_blank" rel="noopener">
+    <img src="https://i.ibb.co/Z6G50SV0/Screenshot-2026-04-06-20-36-08-removebg-preview.png" alt="Immunotec">
+    <span class="nav-store">Wimms Autismo</span>
+  </a>
+  <a href="https://wa.me/522218620111?text=Hola%2C%20quiero%20pedir%20Wimms%20Autismo" class="nav-wa" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span class="nav-wa-txt">Pedir por WhatsApp</span>
+  </a>
+</nav>
+
+<!-- 👉 BANNER: pega aquí tu enlace directo de imgbb (https://i.ibb.co/...) dentro de src="" -->
+<div class="banner-top">
+  <img src="https://i.ibb.co/gF6SBQYp/WIMMS-AUTISMO.jpg" alt="Wimms Autismo – Omega-3 nano-emulsionado para niños">
+</div>
+
+<!-- ═══ A · ATENCIÓN ═══ -->
+<section class="hero">
+  <span class="hero-float">🧩</span><span class="hero-float">⭐</span><span class="hero-float">🌙</span>
+  <span class="hero-float">🧠</span><span class="hero-float">💛</span><span class="hero-float">🦋</span>
+  <div class="hero-badge"><span class="hero-badge-dot"></span>Wimms Autismo · Immunotec</div>
+  <h1>Apoya su cerebro, su calma<br>y su aprendizaje cada día</h1>
+  <p class="hero-sub">Gomitas Wimms con Omega-3 DHA/EPA nano-emulsionado, vitaminas y minerales, sin azúcar, colorantes ni conservantes artificiales. Una forma deliciosa de nutrir a niños con autismo, pensada para acompañar su proceso junto a su equipo de especialistas.</p>
+  <a href="https://wa.me/522218620111?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Wimms%20Autismo" class="hero-cta" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Quiero información por WhatsApp
+  </a>
+  <div class="scroll-hint">DESCUBRE MÁS</div>
+</section>
+
+<!-- ═══ I · INTERÉS ═══ -->
+<section class="wimms-hero">
+  <div class="container">
+    <span class="section-label">¿Por qué Omega-3 nano-emulsionado?</span>
+    <h2 class="section-title">Nutrición cerebral que<br><span style="background:linear-gradient(135deg,#ff9f1c,#ff8a00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">el cuerpo sí aprovecha</span></h2>
+    <div class="purple-line"></div>
+    <p class="section-sub">El DHA y el EPA son grasas esenciales para el cerebro. La nano-emulsión reduce el tamaño de las partículas de Omega-3 para favorecer su absorción, y sin el sabor a pescado que muchos niños rechazan. Una textura suave y predecible que facilita la rutina diaria.</p>
+    <div class="benefit-grid fade-up">
+      <div class="glass"><span class="b-ico">🔥</span><h3>Apoya a reducir la inflamación</h3><p>El Omega-3 EPA/DHA contribuye a modular la respuesta inflamatoria, incluida la del tejido cerebral.</p></div>
+      <div class="glass"><span class="b-ico">🎯</span><h3>Atención y concentración</h3><p>El DHA es un componente estructural del cerebro y apoya las funciones cognitivas.</p></div>
+      <div class="glass"><span class="b-ico">🧠</span><h3>Memoria y aprendizaje</h3><p>Nutrientes clave para la comunicación entre neuronas durante la etapa escolar.</p></div>
+      <div class="glass"><span class="b-ico">🌙</span><h3>Sueño y calma emocional</h3><p>Apoya la regulación de los patrones de sueño y un estado de ánimo más equilibrado.</p></div>
+      <div class="glass"><span class="b-ico">🤍</span><h3>Conducta más regulada</h3><p>Ayuda a disminuir la impulsividad al nutrir los circuitos que regulan la autorregulación.</p></div>
+      <div class="glass"><span class="b-ico">🛡️</span><h3>Defensas naturales</h3><p>Vitaminas y minerales que fortalecen el sistema inmune del niño.</p></div>
+    </div>
+    <div class="wimms-grid fade-up" style="margin-top:56px;">
+      <div class="wimms-info">
+        <h3>Pensado para la sensibilidad de tu hijo</h3>
+        <ul class="wimms-features">
+          <li><span class="feat-icon">🚫</span><div><strong style="color:#fff;">Sin azúcar, colorantes ni conservadores artificiales</strong></div></li>
+          <li><span class="feat-icon">😋</span><div><strong style="color:#fff;">Sabor y textura amigables</strong> — fáciles de aceptar y de incluir en su rutina.</div></li>
+          <li><span class="feat-icon">🧬</span><div><strong style="color:#fff;">Fórmula avanzada</strong> — Omega-3 (DHA/EPA), vitaminas y minerales en una sola gomita.</div></li>
+        </ul>
+        <div class="cert-chips"><span class="cert-chip">Omega-3 DHA/EPA</span><span class="cert-chip">Nano-emulsión</span><span class="cert-chip">Immunotec</span></div>
+      </div>
+      <div class="glass" style="text-align:center;">
+        <p class="section-label" style="margin-bottom:8px;">Antes de empezar</p>
+        <p style="color:var(--mist);font-size:.92rem;line-height:1.75;">Wimms es un suplemento nutricional: complementa, no sustituye el tratamiento, las terapias ni la orientación de su pediatra o especialista. Te ayudamos a integrarlo de forma segura.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ D · DESEO (identificación) ═══ -->
+<section class="pain-section">
+  <div class="container">
+    <span class="section-label">¿Te suena familiar?</span>
+    <h2 class="section-title">Conocemos tu día a día.<br>Wimms te acompaña.</h2>
+    <div class="purple-line"></div>
+    <div class="pain-grid fade-up">
+      <div class="pain-visual">
+        <p class="pain-header">Toca lo que observas en casa</p>
+        <div class="pain-dots">
+          <div class="pain-dot" onclick="toggleDot(this)"><span class="dot-node"></span>Le cuesta concentrarse</div>
+          <div class="pain-dot" onclick="toggleDot(this)"><span class="dot-node"></span>Duerme poco o con interrupciones</div>
+          <div class="pain-dot" onclick="toggleDot(this)"><span class="dot-node"></span>Actúa de forma impulsiva</div>
+          <div class="pain-dot" onclick="toggleDot(this)"><span class="dot-node"></span>Alimentación muy selectiva</div>
+          <div class="pain-dot" onclick="toggleDot(this)"><span class="dot-node"></span>Frustración frecuente</div>
+          <div class="pain-dot" onclick="toggleDot(this)"><span class="dot-node"></span>Memoria y aprendizaje lentos</div>
+          <div class="pain-dot" onclick="toggleDot(this)"><span class="dot-node"></span>Se enferma seguido</div>
+          <div class="pain-dot" onclick="toggleDot(this)"><span class="dot-node"></span>Rechaza suplementos con sabor fuerte</div>
+        </div>
+      </div>
+      <div class="pain-text">
+        <h3>Cada avance cuenta, y la nutrición suma</h3>
+        <p>Muchos niños con autismo tienen dietas restringidas y pueden quedarse cortos en grasas esenciales. Wimms ayuda a cubrir esa brecha de forma sencilla, junto a las terapias y el cuidado que ya recibe.</p>
+        <ul class="pain-list">
+          <li>Omega-3 DHA/EPA en nano-emulsión para mejor absorción</li>
+          <li>Apoyo a la atención, la memoria y el descanso</li>
+          <li>Sin azúcar, colorantes ni conservadores artificiales</li>
+          <li>Respaldado por Immunotec y su trayectoria científica</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mid-cta"><a href="https://wa.me/522218620111?text=Hola%2C%20quiero%20saber%20si%20Wimms%20Autismo%20es%20para%20mi%20hijo" class="hero-cta" style="animation:none;" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Resolver mis dudas por WhatsApp</a></div>
+  </div>
+</section>
+
+
+
+  
+<!-- ═══ VIDEO (mitad del funnel, antes de testimonios) ═══ -->
+<section class="video-section">
+  <div class="container">
+    <span class="section-label">Míralo en acción</span>
+    <h2 class="section-title">Conoce Wimms Autismo<br>en menos de 3 minutos</h2>
+    <div class="purple-line" style="margin:14px auto 0;"></div>
+    <!-- 👉 Reemplaza VIDEO_ID por el ID de tu video de YouTube (lo que va después de watch?v=) -->
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/enrHz8jcu-8?rel=0&modestbranding=1" title="Wimms Autismo – Video informativo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIOS (6) ═══ -->
+<section class="testimonials-section">
+  <div class="container">
+    <span class="section-label">Voces de la comunidad</span>
+    <h2 class="section-title">Mamás y especialistas<br>comparten su experiencia</h2>
+    <div class="purple-line"></div>
+    <div class="testimonials-grid fade-up">
+      <!-- ⚠️ Sustituye cada texto/nombre por el comentario real de Facebook (con permiso de la persona). -->
+      <div class="testi-card"><span class="testi-product tp-wimms">Mamá · Atención</span><div class="stars">★★★★★</div><p class="testi-text">Mi hijo está en tercero de primaria y su maestra notó que ahora termina sus actividades con menos distracciones. Para nosotros fue un cambio muy bonito.</p><div class="testi-author"><div class="testi-avatar">M</div><div><div class="testi-name">Mariana R.</div><div class="testi-loc">Mamá · Puebla</div></div></div></div>
+      <div class="testi-card"><span class="testi-product tp-wimms">Mamá · Sueño</span><div class="stars">★★★★★</div><p class="testi-text">Dormir era una batalla todas las noches. Después de unas semanas con Wimms sus descansos son más tranquilos y amanecemos con mejor ánimo.</p><div class="testi-author"><div class="testi-avatar">L</div><div><div class="testi-name">Lucía H.</div><div class="testi-loc">Mamá · CDMX</div></div></div></div>
+      <div class="testi-card"><span class="testi-product tp-wimms">Pediatra · Nutrición</span><div class="stars">★★★★★</div><p class="testi-text">Recomiendo el Omega-3 como parte del apoyo nutricional. Me gusta que Wimms sea sin azúcar ni colorantes y fácil de aceptar para los niños.</p><div class="testi-author"><div class="testi-avatar">D</div><div><div class="testi-name">Dra. Carolina V.</div><div class="testi-loc">Pediatra · Querétaro</div></div></div></div>
+      <div class="testi-card"><span class="testi-product tp-wimms">Mamá · Regulación</span><div class="stars">★★★★★</div><p class="testi-text">Notamos menos explosiones de frustración. Sigue en sus terapias, pero Wimms se volvió parte de su rutina y lo pide solito.</p><div class="testi-author"><div class="testi-avatar">A</div><div><div class="testi-name">Ana G.</div><div class="testi-loc">Mamá · Guadalajara</div></div></div></div>
+      <div class="testi-card"><span class="testi-product tp-wimms">Nutrióloga · Absorción</span><div class="stars">★★★★★</div><p class="testi-text">La nano-emulsión es un punto a favor: mis pacientes con alimentación selectiva lo aceptan sin problema y no hay sabor a pescado.</p><div class="testi-author"><div class="testi-avatar">N</div><div><div class="testi-name">Lic. Paola S.</div><div class="testi-loc">Nutrióloga · León</div></div></div></div>
+      <div class="testi-card"><span class="testi-product tp-wimms">Mamá · Memoria</span><div class="stars">★★★★★</div><p class="testi-text">En el colegio me comentaron que participa más y recuerda mejor las instrucciones. Seguimos con constancia y con la guía de su doctora.</p><div class="testi-author"><div class="testi-avatar">K</div><div><div class="testi-name">Karen T.</div><div class="testi-loc">Mamá · Monterrey</div></div></div></div>
+    </div>
+    <p class="testi-note">Experiencias individuales; los resultados pueden variar de un niño a otro.</p>
+  </div>
+</section>
+
+<!-- ═══ A · ACCIÓN ═══ -->
+<section class="cta-section">
+  <div class="container">
+    <span class="section-label">Da el primer paso hoy</span>
+    <h2 class="section-title">Solicita tu plan personalizado<br>de Wimms Autismo</h2>
+    <div class="purple-line" style="margin:14px auto 0;"></div>
+    <p class="section-sub" style="margin:0 auto;text-align:center;">Escríbenos por WhatsApp y te orientamos según la edad y necesidades de tu hijo, sin compromiso.</p>
+    <div class="steps">
+      <div class="glass"><span class="step-n">1</span><strong>Escríbenos</strong><p style="font-size:.85rem;color:var(--mist);margin-top:6px;">Toca el botón y cuéntanos sobre tu hijo.</p></div>
+      <div class="glass"><span class="step-n">2</span><strong>Recibe tu plan</strong><p style="font-size:.85rem;color:var(--mist);margin-top:6px;">Te indicamos cómo integrarlo a su rutina.</p></div>
+      <div class="glass"><span class="step-n">3</span><strong>Haz tu pedido</strong><p style="font-size:.85rem;color:var(--mist);margin-top:6px;">Coordinamos tu pedido y envío por el mismo chat.</p></div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:40px;">
+      <a href="https://wa.me/522218620111?text=Hola%2C%20quiero%20hacer%20mi%20pedido%20de%20Wimms%20Autismo" class="cta-wa-main" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Pedir Wimms Autismo por WhatsApp</a>
+      <a href="https://wa.me/522218620111?text=Hola%2C%20quiero%20mi%20plan%20personalizado%20Wimms%20Autismo" class="hero-cta" style="animation:none;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);box-shadow:none;font-size:.95rem;padding:14px 30px;" target="_blank" rel="noopener">Solicitar plan personalizado</a>
+      <p class="cta-sub">Atención por WhatsApp · <strong>52 221 862 0111</strong></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Wimms Autismo · Consultora Independiente Immunotec · @wimms.autismo<br>
+  Este sitio no es propiedad de Immunotec Inc. Wimms es un suplemento alimenticio: no diagnostica, trata, cura ni previene ninguna enfermedad ni sustituye terapias, tratamientos médicos o la orientación de su pediatra o especialista. Los testimonios son experiencias individuales.</p>
+</footer>
+
+<script>
+function toggleDot(el){el.classList.toggle('active');}
+(function(){
+  const canvas=document.getElementById('dna-canvas');
+  const ctx=canvas.getContext('2d');
+  let W,H,particles=[],strands=[];
+  const N_PARTICLES=80,N_STRANDS=3;
+  function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
+  resize();window.addEventListener('resize',resize);
+  class Particle{constructor(){this.reset();}reset(){this.x=Math.random()*W;this.y=Math.random()*H;this.r=Math.random()*2.2+0.5;this.vx=(Math.random()-.5)*.35;this.vy=(Math.random()-.5)*.35;this.alpha=Math.random()*.5+.1;this.hue=Math.random()<.6?32:(Math.random()<.5?325:48);}update(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>W||this.y<0||this.y>H)this.reset();}draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=`hsla(${this.hue},90%,65%,${this.alpha})`;ctx.fill();}}
+  for(let i=0;i<N_PARTICLES;i++)particles.push(new Particle());
+  class DNAStrand{constructor(x){this.xOff=x;this.t=Math.random()*Math.PI*2;this.speed=.004+Math.random()*.003;}draw(){const amp=40,freq=.022,steps=Math.ceil(H/8);this.t+=this.speed;for(let i=0;i<steps;i++){const y=(i/steps)*H,phase=y*freq+this.t,x1=this.xOff+Math.sin(phase)*amp,x2=this.xOff+Math.sin(phase+Math.PI)*amp,alpha=.25+.15*Math.abs(Math.sin(phase));ctx.beginPath();ctx.arc(x1,y,1.8,0,Math.PI*2);ctx.fillStyle=`rgba(255,159,28,${alpha})`;ctx.fill();ctx.beginPath();ctx.arc(x2,y,1.8,0,Math.PI*2);ctx.fillStyle=`rgba(214,36,122,${alpha})`;ctx.fill();if(i%3===0){const a2=.08+.07*Math.abs(Math.cos(phase));ctx.beginPath();ctx.moveTo(x1,y);ctx.lineTo(x2,y);ctx.strokeStyle=`rgba(255,159,28,${a2})`;ctx.lineWidth=.8;ctx.stroke();if(Math.abs(Math.sin(phase*3))>.7){ctx.beginPath();ctx.arc(x1,y,2.2,0,Math.PI*2);ctx.fillStyle=`rgba(255,138,0,${a2*2})`;ctx.fill();ctx.beginPath();ctx.arc(x2,y,2.2,0,Math.PI*2);ctx.fillStyle=`rgba(255,159,28,${a2*2})`;ctx.fill();}}}}}
+  for(let i=0;i<N_STRANDS;i++)strands.push(new DNAStrand(W*(i+1)/(N_STRANDS+1)));
+  window.addEventListener('resize',()=>{strands.forEach((s,i)=>s.xOff=W*(i+1)/(N_STRANDS+1));});
+  function drawConnections(){const maxDist=110;for(let i=0;i<particles.length;i++){for(let j=i+1;j<particles.length;j++){const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<maxDist){ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.strokeStyle=`rgba(232,93,4,${.12*(1-d/maxDist)})`;ctx.lineWidth=.5;ctx.stroke();}}}}
+  function loop(){ctx.clearRect(0,0,W,H);strands.forEach(s=>s.draw());drawConnections();particles.forEach(p=>{p.update();p.draw();});requestAnimationFrame(loop);}
+  loop();
+})();
+
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.1});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+const obs2=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:.08});
+document.querySelectorAll('.testi-card,.wimms-product-card,.pillar-card').forEach((c,i)=>{c.style.opacity='0';c.style.transform='translateY(22px)';c.style.transition=`opacity .5s ease ${i*.06}s, transform .5s ease ${i*.06}s`;obs2.observe(c);});
+</script>
+</body>
+</html>
